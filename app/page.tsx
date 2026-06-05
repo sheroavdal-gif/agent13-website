@@ -1,294 +1,232 @@
-import latestEmail from "../public/latest-email.json";
-
-export default function Home() {
-  
-  
+export default function HomePage() {
+  const capabilities = [
+    ["Email Management", "Reads, categorizes and responds to incoming emails with professional, human-like communication."],
+    ["Phone Communication", "Handles incoming calls, answers common questions and supports customer conversations."],
+    ["Meeting Booking", "Manages booking requests, schedules meetings and keeps calendars organized."],
+    ["Lead Management", "Identifies potential customers, captures opportunities and keeps sales conversations moving."],
+    ["Workflow Automation", "Organizes tasks, tracks progress and ensures important requests never get lost."],
+    ["Customer Service", "Provides fast, professional support and reduces waiting time for customers."],
+    ["Multi-Agent System", "Multiple specialized AI agents working together across different business functions."],
+    ["Marketing Automation", "Supports social media management, customer engagement and marketing workflows."],
+    ["24/7 Availability", "Works every hour of every day without breaks, holidays or sick leave."],
+  ];
 
   return (
-    <main className="min-h-screen bg-black text-white flex bg-cover bg-center">
-     <div
-  className="fixed inset-0 opacity-10 bg-cover bg-center"
-  style={{
-    backgroundImage:
-  "url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?q=80&w=2070&auto=format&fit=crop')",
-  }}
-></div>  
+    <main className="min-h-screen bg-black text-white">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+        <video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover"
+>
+  <source src="/agent13-bg.mp4" type="video/mp4" />
+</video>
+        <div className="absolute inset-0 bg-black/65" />
 
-      <div className="fixed top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div className="relative z-10 max-w-6xl text-center">
+          <p className="mb-5 text-sm tracking-[0.5em] text-cyan-300 uppercase">
+            Agent 13
+          </p>
 
-  
+          <h1 className="text-5xl md:text-7xl font-black leading-tight">
+            Your Next Employee
+<br />
+Isn't Human
+          </h1>
 
+          <p className="mt-8 text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
+            Agent 13 is an intelligent business operating system designed to
+            handle communication, customer service, sales support, workflow
+            management and business operations around the clock.
+          </p>
 
-
-</div>
-
-      {/* Sidebar */}
-      <aside className="w-56 bg-zinc-950 border-r border-zinc-800 p-6 shrink-0">
-        <h1 className="text-xl font-bold mb-10">
-          AI Agent 13
-        </h1>
-
-        <nav className="space-y-4 text-zinc-400 text-sm">
-          <p className="text-white bg-zinc-800 px-3 py-2 rounded-xl cursor-pointer hover:bg-blue-500 transition">
-  Dashboard
-</p>
-
-          <p>Inbox</p>
-          <p>AI Agents</p>
-          <p>Analytics</p>
-          <p>Automation</p>
-          <p>Settings</p>
-          <div className="mt-10 bg-black/60 border border-zinc-800 rounded-3xl p-4 text-center">
-
-  <img
-  src="/agent13.png"
-  alt="Agent 13"
-  className="w-72 h-[32rem] object-cover rounded-2xl mx-auto mb-4"
-/>
-
-  <p className="text-white font-bold">
-    AGENT 13
-  </p>
-
-  <p className="text-green-400 text-sm mt-1">
-    ACTIVE
-  </p>
-
-</div>
-        </nav>
-      </aside>
-
-      {/* Main Content */}
-      <section className="flex-1 p-10 overflow-y-auto">
-
-        {/* Top Status */}
-        <div className="flex gap-3 mb-6 flex-wrap">
-
-          
-
-          
-            
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+46700792148"
+className="px-8 py-4 rounded-xl bg-cyan-300 text-black font-bold hover:bg-cyan-200 transition">
+              Book a Live Demo
+            </a>
+            <a href="#capabilities" className="px-8 py-4 rounded-xl border border-white/20 text-white hover:bg-white/10 transition">
+              Explore Capabilities
+            </a>
           </div>
 
-          
-
-        
-
-        {/* Heading */}
-        <h1 className="text-3xl font-bold mb-3">
-          AI Agent 13
-        </h1>
-        
-
-        <p className="text-zinc-400 mb-2">
-  Intelligent AI system for modern businesses
-</p>
-
-<p className="text-white mb-10">
-  3 ACTIVE AUTOMATIONS
-</p>
-        
-
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-
-          <div className="bg-black/70 border border-zinc-800 rounded-3xl p-6">
-            <p className="text-zinc-500 text-sm mb-2">
-              AI Core
-            </p>
-
-            <p className="text-green-400 text-2xl font-bold animate-pulse">
-              ONLINE
-            </p>
-          </div>
-
-          <div className="bg-black/70 border border-zinc-800 rounded-3xl p-6">
-            <p className="text-zinc-500 text-sm mb-2">
-              Automation
-            </p>
-
-            <p className="text-green-400 text-2xl font-bold">
-              RUNNING
-            </p>
-          </div>
-
-          <div className="bg-black/70 border border-zinc-800 rounded-3xl p-6">
-            <p className="text-zinc-500 text-sm mb-2">
-              GPT Status
-            </p>
-
-            <p className="text-blue-400 text-2xl font-bold">
-              CONNECTED
-            </p>
-          </div>
-          <div className="bg-black/70 border border-zinc-800 rounded-3xl p-6">
-  <p className="text-zinc-500 text-sm mb-2">
-    Leads Today
-  </p>
-
-  <p className="text-green-400 text-2xl font-bold">
-    {latestEmail.leads}
-  </p>
-</div>
-
-<div className="bg-black/70 border border-zinc-800 rounded-3xl p-6">
-            <p className="text-zinc-500 text-sm mb-2">
-
-              Meetings Today
-
-            </p>
-
-            <p className="text-blue-400 text-2xl font-bold">
-              {latestEmail.meetings}
-            </p>
-          </div>
-
+          <p className="mt-10 text-gray-400">
+            One system. Multiple agents. Unlimited availability.
+          </p>
         </div>
-        
+      </section>
 
-        {/* AI Inbox */}
-        <div className="mt-10 bg-black/70 border border-zinc-800 rounded-3xl p-6">
+      <section className="px-6 py-24 bg-zinc-950">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-5 text-center">
+          {[
+            ["24/7", "Availability"],
+            ["0", "Missed Leads"],
+            ["∞", "Scalability"],
+            ["1", "AI Operating System"],
+          ].map(([number, label]) => (
+            <div
+              key={label}
+              className="rounded-2xl border border-white/10 bg-white/5 p-8"
+            >
+              <div className="text-5xl font-black text-cyan-300">{number}</div>
+              <div className="mt-3 text-gray-300 font-semibold">{label}</div>
+            </div>
+          ))}
+        </div>
 
-          <h2 className="text-2xl font-bold mb-6">
-            AI Inbox
+        <p className="mt-10 text-center text-gray-400">
+          Powered by multiple AI agents across email, phone, booking, sales,
+          customer service, workflows and marketing.
+        </p>
+      </section>
+
+      <section id="capabilities" className="px-6 py-24 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-cyan-300 tracking-[0.3em] uppercase text-sm text-center">
+            Capabilities
+          </p>
+
+          <h2 className="mt-4 text-4xl md:text-6xl font-black text-center">
+            Built for modern business operations.
           </h2>
 
-          <div className="bg-black border border-zinc-800 rounded-2xl p-5">
-
-            <p className="text-zinc-500 text-sm mb-2">
-              New Lead · {latestEmail.source}
-            </p>
-
-            <p className="text-lg mb-4">
-              {latestEmail.subject}
-            </p>
-
-            {/* AI Reply */}
-            <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 mb-4">
-
-              <p className="text-zinc-500 text-sm mb-2">
-                Suggested AI Reply
-              </p>
-
-              <p className="text-sm">
-                {latestEmail.reply}
-              
-              </p>
-
-            </div>
-
-            <div className="flex gap-3 flex-wrap">
-
-              <span className="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm">
-                {latestEmail.priority}
-              </span>
-
-              <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm">
-                {latestEmail.category}
-              </span>
-              <div className="mt-6 bg-black border border-zinc-800 rounded-2xl p-4 font-mono text-sm text-green-400">
-
-  <p>
-&gt; Priority: {latestEmail.priority}
-</p>
-
-<p className="mt-2">
-&gt; Category: {latestEmail.category}
-</p>
-
-<p className="mt-2">
-&gt; Analysis: {latestEmail.analysis}
-</p>
-
-<p className="mt-2 text-yellow-400">
-&gt; Recommended Action: {latestEmail.action}
-</p>
-<p className="mt-2 text-cyan-400">
-&gt; Workflow: {latestEmail.workflow}
-</p>
-
-<p className="mt-2 text-green-400">
-&gt; Agent 13 completed analysis successfully.
-</p>
-
-</div>
-
-            </div>
-
+          <div className="grid md:grid-cols-3 gap-6 mt-16">
+            {capabilities.map(([title, text]) => (
+              <div
+                key={title}
+                className="rounded-2xl border border-white/10 bg-white/5 p-7 hover:bg-white/10 transition"
+              >
+                <h3 className="text-2xl font-bold text-cyan-300">{title}</h3>
+                <p className="mt-4 text-gray-400 leading-relaxed">{text}</p>
+              </div>
+            ))}
           </div>
-
         </div>
+      </section>
 
-        {/* Activity Feed */}
-        <div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-3xl p-6">
+      <section className="px-6 py-24 bg-zinc-950">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-cyan-300 tracking-[0.3em] uppercase text-sm">
+            Agent 13 Platform
+          </p>
 
-          <h2 className="text-2xl font-bold mb-6">
-            AI Activity Feed
-            <p className="text-zinc-500 text-sm mb-6">
-  Last activity: 2 seconds ago
-</p>
+          <h2 className="mt-4 text-4xl md:text-6xl font-black">
+            Not a chatbot. A business operating system.
           </h2>
 
-          <div className="space-y-4">
+          <p className="mt-8 text-lg md:text-xl text-gray-300 leading-relaxed">
+            Agent 13 helps companies reduce administrative workload, improve
+            response times, capture more opportunities and create a more
+            scalable business operation.
+          </p>
 
-            <div className="bg-black border border-zinc-800 rounded-2xl p-4">
-              
-                AI analyzing incoming lead...
-              
-            </div>
-
-            <div className="bg-black border border-zinc-800 rounded-2xl p-4">
-              <p className="text-blue-400 text-sm">
-                AI response generated successfully.
-              </p>
-            </div>
-
-            <div className="bg-black border border-zinc-800 rounded-2xl p-4">
-              <p className="text-yellow-400 text-sm">
-                Follow-up scheduled for 48h.
-              </p>
-            </div>
-
+          <div className="mt-12 rounded-3xl border border-cyan-300/30 bg-cyan-300/10 p-10">
+            <h3 className="text-3xl md:text-5xl font-black">
+              From 8,999 SEK / month
+            </h3>
+            <p className="mt-5 text-gray-300 text-lg">
+              Custom setup and pricing based on your business needs and AI workforce
+            </p>
           </div>
-
         </div>
-<div className="mt-10 bg-zinc-900 border border-zinc-800 rounded-3xl p-6">
+      </section>
+      <section className="py-24 px-6 bg-black">
+  <div className="max-w-4xl mx-auto">
 
-  <h2 className="text-2xl font-bold mb-6">
-    Active AI Agents
-  </h2>
+    <p className="text-cyan-400 uppercase tracking-[0.3em] text-center mb-4">
+      FAQ
+    </p>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <h2 className="text-5xl font-bold text-center mb-12">
+      Frequently Asked Questions
+    </h2>
 
-    <div className="bg-black border border-zinc-800 rounded-2xl p-5">
-      <p className="font-bold mb-1">Sales Agent</p>
-      <p className="text-zinc-500 text-sm mb-3">Lead conversion & outreach</p>
-      <p className="text-green-400 text-sm font-bold ">ACTIVE</p>
-    </div>
+    <div className="space-y-6">
 
-    <div className="bg-black border border-zinc-800 rounded-2xl p-5">
-      <p className="font-bold mb-1">Support Agent</p>
-      <p className="text-zinc-500 text-sm mb-3">Customer communication</p>
-      <p className="text-green-400 text-sm font-bold">ACTIVE</p>
-    </div>
+      <div className="border border-zinc-800 rounded-2xl p-6">
+        <h3 className="text-xl font-semibold mb-3">
+          We already use ChatGPT.
+        </h3>
+        <p className="text-zinc-400">
+          ChatGPT answers questions. Agent 13 executes work. Agent 13 monitors
+          incoming emails, categorizes requests, generates responses, books
+          meetings and updates workflows automatically.
+        </p>
+      </div>
 
-    <div className="bg-black border border-zinc-800 rounded-2xl p-5">
-      <p className="font-bold mb-1">Booking Agent</p>
-      <p className="text-zinc-500 text-sm mb-3">Meetings & scheduling</p>
-      <p className="text-yellow-400 text-sm font-bold">STANDBY</p>
-    </div>
+      <div className="border border-zinc-800 rounded-2xl p-6">
+        <h3 className="text-xl font-semibold mb-3">
+          Why not hire an employee instead?
+        </h3>
+        <p className="text-zinc-400">
+          A full-time employee works limited hours and requires salary,
+          onboarding and management. Agent 13 operates 24/7 and never misses a lead.
+        </p>
+      </div>
 
-    <div className="bg-black border border-zinc-800 rounded-2xl p-5">
-      <p className="font-bold mb-1">Research Agent</p>
-      <p className="text-zinc-500 text-sm mb-3">Market & data intelligence</p>
-      <p className="text-blue-400 text-sm font-bold">READY</p>
+      <div className="border border-zinc-800 rounded-2xl p-6">
+        <h3 className="text-xl font-semibold mb-3">
+          Can Agent 13 answer customer emails?
+        </h3>
+        <p className="text-zinc-400">
+          Yes. Agent 13 can read, categorize and respond to incoming emails
+          using instructions tailored to your business.
+        </p>
+      </div>
+
+      <div className="border border-zinc-800 rounded-2xl p-6">
+        <h3 className="text-xl font-semibold mb-3">
+          Can Agent 13 reduce staffing needs?
+        </h3>
+        <p className="text-zinc-400">
+          Agent 13 can automate tasks traditionally handled by administrative staff, customer service teams, booking coordinators and sales support personnel.
+
+This allows businesses to operate more efficiently, respond faster and scale operations without increasing administrative overhead.
+        </p>
+      </div>
+
+      <div className="border border-zinc-800 rounded-2xl p-6">
+        <h3 className="text-xl font-semibold mb-3">
+          How fast can we get started?
+        </h3>
+        <p className="text-zinc-400">
+          Most companies can be onboarded within a few days depending on their
+          requirements and integrations.
+        </p>
+      </div>
+
     </div>
 
   </div>
+</section>
+<section className="relative h-[500px] overflow-hidden bg-black">
+  <img
+    src="/agent13-city.png"
+    alt="Agent 13 City"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
 
-</div>
+  <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
+</section>
+
+      <section className="px-6 py-24 bg-black">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-6xl font-black">
+            Ready to hire your first AI employee?
+          </h2>
+
+          <p className="mt-6 text-gray-300 text-lg">
+            Book a live demonstration and discover how Agent 13 can answer emails, manage workflows, support customer communication and help your business operate around the clock.
+          </p>
+
+          <a href="tel:+46700792148"
+className="inline-block mt-10 px-10 py-5 rounded-xl bg-cyan-300 text-black font-black hover:bg-cyan-200 transition">
+            Book a Live Demo
+          </a>
+        </div>
       </section>
-
-  </main>
-);
-} 
+    </main>
+  );
+}
