@@ -1,0 +1,13 @@
+{
+    "source": "Gmail",
+    "subject": "Fwd: Företags fråga",
+    "reply": "Hej,\n\nTack för ditt mejl och för att du vänder dig till oss för hjälp med rekrytering. För att vi ska kunna hjälpa dig på bästa sätt med att anställa personal till ditt lager, skulle jag behöva veta lite mer om dina behov:\n\n- Hur många personer behöver du anställa?\n- Vilka arbetsuppgifter ska de utföra?\n- Vilken typ av anställning gäller det (till exempel heltid, deltid, tillfälligt)?\n- När önskar du att personalen ska börja?\n\nÅterkom gärna med dessa uppgifter så hjälper vi dig vidare.\n\nMed vänliga hälsningar,  \nAgent 13",
+    "priority": "Normal",
+    "status": "Analyzed",
+    "category": "Staffing",
+    "analysis": "Kunden är intresserad av bemanning eller rekrytering.",
+    "action": "Contact Recruitment Team",
+    "workflow": "Recruitment Started",
+    "leads": 1,
+    "meetings": 0
+}
